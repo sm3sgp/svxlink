@@ -269,7 +269,7 @@ Description: AsyncCore library for SvxLink
  provide voice mail and echo (talkback) service.
  .
  This package contains the AsyncCore library for event-driven
- applications that use Async classes. 
+ applications that use Async classes.
  .
  EchoLink® is a registered trademark of Synergenics, LLC.
 
