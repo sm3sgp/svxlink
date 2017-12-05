@@ -7,4 +7,5 @@ etc/svxlink/svxlink.conf
 etc/svxlink/svxlink.d/*
 etc/svxlink/TclVoiceMail.conf
 etc/svxlink/.procmailrc
+etc/default/svxlink
 lib/systemd/system/svxlink.service
