@@ -35,9 +35,9 @@ Copyright: 2010 Michael Vorleiter <parsival1609@yahoo.de>
 License: GPL-2+
 
 Files:
- debian/svxlink-server.svxlink.service
- debian/remotetrx.service
-Copyright: 2015 Richard Neese <kb3vgw@gmail.com>
+ debian/svxreflector.service
+ debian/svxreflector.default
+Copyright: 2017 Richard Neese <kb3vgw@gmail.com>
 License: GPL-2+
 
 Files: debian/icons/original/warning-10.svg
