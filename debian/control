@@ -4,10 +4,16 @@ Priority: optional
 Maintainer: Felix Lechner <felix.lechner@lease-up.com>
 Build-Depends-Indep: librsvg2-bin
 Build-Depends: debhelper (>= 10), cmake,
- libsigc++-2.0-dev (>= 2.2.10-0.2), libpopt-dev, libgcrypt20-dev,
- libgsm1-dev, libspeex-dev, libopus-dev, libasound2-dev,
- qtbase5-dev, qttools5-dev, qttools5-dev-tools,
- tcl-dev, tk-dev,
+ libsigc++-2.0-dev (>= 2.2.10-0.2),
+ libpopt-dev,
+ libgcrypt-dev,
+ libgsm1-dev,
+ libspeex-dev,
+ libopus-dev,
+ libasound2-dev,
+ qtbase5-dev,
+ qttools5-dev,
+ tk-dev,
  doxygen
 Standards-Version: 4.1.2
 Homepage: http://www.svxlink.org
