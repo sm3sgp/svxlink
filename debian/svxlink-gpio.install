@@ -1,2 +1,2 @@
-/usr/sbin/svxlink_gpio_* /usr/share/svxlink/gpio/
+/usr/sbin/svxlink_gpio_* /usr/share/svxlink/scripts/
 etc/svxlink/gpio.conf
