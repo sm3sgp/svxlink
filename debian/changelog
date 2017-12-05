@@ -1,7 +1,6 @@
 svxlink (15.11+20171204~github.bdf70af5-1) UNRELEASED; urgency=medium
 
   * Pulled new upstream master in expectation of next release
-  * Deleted CC0
   * Bumped Standards-Version: 4.1.2
   * Added .gitignore file
   * Updated maintainer email address
@@ -16,8 +15,10 @@ svxlink (15.11+20171204~github.bdf70af5-1) UNRELEASED; urgency=medium
   * Changed package descriptions in control
   * Switched to systemd scripts provided by upstream
   * Enabled systemd integration in rules
+  * Pulled systemd files for svxreflector from Richard Neese
+  * Moved CC0 license nearer the original icons
 
- -- Felix Lechner <felix.lechner@lease-up.com>  Tue, 05 Dec 2017 15:17:16 -0800
+ -- Felix Lechner <felix.lechner@lease-up.com>  Tue, 05 Dec 2017 15:35:39 -0800
 
 svxlink (15.11-2.1) unstable; urgency=medium
 
