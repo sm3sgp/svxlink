@@ -1,2 +1,2 @@
 # symbols files are fragile for C++ libraries
-libasynccpp1.4: no-symbols-control-file usr/lib/*/libasynccpp.so.1.4.0
+libasynccpp1.4: no-symbols-control-file usr/lib/*/libasynccpp.so.1.4.99
