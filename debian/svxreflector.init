@@ -1,0 +1,2 @@
+#!/bin/sh
+svxreflector --daemon --config=/etc/svxlink/svxreflector.conf --logfile=/var/log/svxreflector
