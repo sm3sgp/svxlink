@@ -1,11 +1,9 @@
 usr/bin/svxlink
 usr/bin/siglevdetcal
-/usr/sbin/svxlink_gpio_*
 usr/lib/*/svxlink/*
 usr/share/svxlink/*
 var/spool/svxlink/*
 etc/svxlink/svxlink.conf
-etc/svxlink/gpio.conf
 etc/svxlink/svxlink.d/*
 etc/svxlink/TclVoiceMail.conf
 etc/svxlink/.procmailrc

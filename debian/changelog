@@ -12,9 +12,10 @@ svxlink (15.11+20171204~github.bdf70af5-1) UNRELEASED; urgency=medium
   * Placed shared libraries in Section: libs
   * Manually create icon directories in rules (for Raspbian Jessie)
   * Ship svxreflector in new binary package
-  * Ship GPIO auxiliaries with svxlink-server
+  * Ship GPIO auxiliaries in separate, architecture independent package
+  * Changed package descriptions in control
 
- -- Felix Lechner <felix.lechner@lease-up.com>  Tue, 05 Dec 2017 13:56:08 -0800
+ -- Felix Lechner <felix.lechner@lease-up.com>  Tue, 05 Dec 2017 14:40:11 -0800
 
 svxlink (15.11-2.1) unstable; urgency=medium
 
