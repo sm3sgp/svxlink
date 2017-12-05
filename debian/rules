@@ -59,6 +59,7 @@ override_dh_installinit:
 .PHONY: override_dh_installchangelogs
 override_dh_installchangelogs:
 	dh_installchangelogs -psvxlink-server src/svxlink/ChangeLog
+	dh_installchangelogs -psvxreflector src/svxlink/ChangeLog
 	dh_installchangelogs -premotetrx src/svxlink/ChangeLog
 	dh_installchangelogs -pqtel src/qtel/ChangeLog
 	dh_installchangelogs -pqtel-icons src/qtel/ChangeLog
