@@ -20,6 +20,11 @@ export QT_SELECT=qt5
 		--sourcedirectory=src \
 		--builddirectory=build \
 
+.PHONY: override_dh_auto_configure
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DWITH_SYSTEMD=ON
+
 .PHONY: override_dh_auto_build-indep
 override_dh_auto_build-indep:
 	mkdir -p $(CURDIR)/debian/icons/generated/64x64/
