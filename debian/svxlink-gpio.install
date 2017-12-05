@@ -1,2 +1,3 @@
-/usr/sbin/svxlink_gpio_* /usr/share/svxlink/scripts/
+usr/sbin/svxlink_gpio_* /usr/share/svxlink/scripts/
 etc/svxlink/gpio.conf
+lib/systemd/system/svxlink_gpio_setup.service

@@ -1,2 +1,3 @@
 usr/bin/remotetrx
 etc/svxlink/remotetrx.conf
+lib/systemd/system/remotetrx.service

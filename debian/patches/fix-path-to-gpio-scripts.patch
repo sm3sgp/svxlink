@@ -1,0 +1,20 @@
+Description: Fix path for GPIO scrips
+ For Debian, installed arch indep scripts in /usr/share/svxlink/scripts/
+Author: Felix Lechner <felix.lechner@lease-up.com>
+Forwarded: no
+Last-Update: 2017-12-05
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/svxlink/systemd/svxlink_gpio_setup.service.in
++++ b/src/svxlink/systemd/svxlink_gpio_setup.service.in
+@@ -3,8 +3,8 @@ Description=SvxLink repeater control sof
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=@SBIN_INSTALL_DIR@/svxlink_gpio_up
+-ExecStop=@SBIN_INSTALL_DIR@/svxlink_gpio_down
++ExecStart=/usr/share/svxlink/scripts/svxlink_gpio_up
++ExecStop=/usr/share/svxlink/scripts/svxlink_gpio_down
+ #Restart=on-failure
+ TimeoutStartSec=60
+ WorkingDirectory=@SVX_SYSCONF_INSTALL_DIR@

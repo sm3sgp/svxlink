@@ -11,3 +11,4 @@ enable-static-libs.patch
 use-default-compile-flags.patch
 enable-verbose-output.patch
 #0001-Fix-compilation-problem-in-Async-AudioDeviceAlsa.patch
+fix-path-to-gpio-scripts.patch

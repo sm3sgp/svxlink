@@ -1,2 +1,3 @@
 usr/bin/svxreflector
 etc/svxlink/svxreflector.conf
+lib/systemd/system/svxreflector.service
