@@ -1,0 +1,77 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+#CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+#CFLAGS:=$(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
+#CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
+#LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+export QT_SELECT=qt5
+
+%:
+	dh $@ \
+		--buildsystem=cmake \
+		--sourcedirectory=src \
+		--builddirectory=build \
+
+.PHONY: override_dh_auto_build-indep
+override_dh_auto_build-indep:
+	rsvg-convert --width 64 --keep-aspect-ratio $(CURDIR)/debian/icons/original/Transmission-3-edited-recolored.svg > $(CURDIR)/debian/icons/generated/64x64/qtel.png
+	rsvg-convert --width 128 --keep-aspect-ratio $(CURDIR)/debian/icons/original/Transmission-3-edited-recolored.svg > $(CURDIR)/debian/icons/generated/128x128/qtel.png
+	rsvg-convert --width 256 --keep-aspect-ratio $(CURDIR)/debian/icons/original/Transmission-3-edited-recolored.svg > $(CURDIR)/debian/icons/generated/256x256/qtel.png
+	dh_auto_build --indep
+
+.PHONY: override_dh_auto_clean
+override_dh_auto_clean:
+	find $(CURDIR) -name 'moc_*' -execdir rm -fv '{}' \;
+	find $(CURDIR) -name 'qrc_*' -execdir rm -fv '{}' \;
+	-rm $(CURDIR)/debian/icons/generated/64x64/qtel.png
+	-rm $(CURDIR)/debian/icons/generated/128x128/qtel.png
+	-rm $(CURDIR)/debian/icons/generated/256x256/qtel.png
+	dh_auto_clean
+
+.PHONY: override_dh_strip
+override_dh_strip:
+	dh_strip -psvxlink-server --dbgsym-migration='svxlink-server-dbg (<< 15.11-1~)'
+	dh_strip -premotetrx --dbgsym-migration='remotetrx-dbg (<< 15.11-1~)'
+	dh_strip -pqtel --dbgsym-migration='qtel-dbg (<< 15.11-1~)'
+	dh_strip -plibecholib1.3 --dbgsym-migration='libecholib-dbg (<< 15.11-1~)'
+	dh_strip -plibasynccore1.4 --dbgsym-migration='libasynccore-dbg (<< 15.11-1~)'
+	dh_strip -plibasynccpp1.4 --dbgsym-migration='libasynccpp-dbg (<< 15.11-1~)'
+	dh_strip -plibasyncaudio1.4 --dbgsym-migration='libasyncaudio-dbg (<< 15.11-1~)'
+	dh_strip -plibasyncqt1.4 --dbgsym-migration='libasyncqt-dbg (<< 15.11-1~)'
+	dh_strip
+
+.PHONY: override_dh_installinit
+override_dh_installinit:
+	dh_installinit -psvxlink-server --name=svxlink
+	dh_installinit
+
+.PHONY: override_dh_installchangelogs
+override_dh_installchangelogs:
+	dh_installchangelogs -psvxlink-server src/svxlink/ChangeLog
+	dh_installchangelogs -premotetrx src/svxlink/ChangeLog
+	dh_installchangelogs -pqtel src/qtel/ChangeLog
+	dh_installchangelogs -pqtel-icons src/qtel/ChangeLog
+	dh_installchangelogs -plibecholib1.3 src/echolib/ChangeLog
+	dh_installchangelogs -plibecholib-dev src/echolib/ChangeLog
+	dh_installchangelogs -plibasynccore1.4 src/async/ChangeLog
+	dh_installchangelogs -plibasynccore-dev src/async/ChangeLog
+	dh_installchangelogs -plibasyncaudio1.4 src/async/ChangeLog
+	dh_installchangelogs -plibasyncaudio-dev src/async/ChangeLog
+	dh_installchangelogs -plibasynccpp1.4 src/async/ChangeLog
+	dh_installchangelogs -plibasynccpp-dev src/async/ChangeLog
+	dh_installchangelogs -plibasyncqt1.4 src/async/ChangeLog
+	dh_installchangelogs -plibasyncqt-dev src/async/ChangeLog
+
+#.PHONY: override_dh_fixperms
+#override_dh_fixperms:
+#	dh_fixperms
+#	chmod a-x debian/svxlink-server/etc/default/svxlink
+#	chmod a-x debian/remotetrx/etc/default/remotetrx

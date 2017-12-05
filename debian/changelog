@@ -1,0 +1,58 @@
+svxlink (15.11-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add upstream patch to fix FTBFS with gcc 7. (Closes: #853672)
+
+ -- Adrian Bunk <bunk@debian.org>  Fri, 01 Sep 2017 16:15:22 +0300
+
+svxlink (15.11-2) unstable; urgency=medium
+
+  * Bugfix release
+  * Referred to $(CURDIR) in rules (Closes: #846703)
+  * Build-Depends: debhelper (>= 10); bumped compat to 10
+  * Dropped Build-Depends: quilt
+  * Switched to new style dbgsym packages
+  * Updated Standards-Version: to 3.9.8
+  * svxlink-server & remotetrx Depend:lsb-base (>= 3.0-6) b/c init scripts
+  * Shipping systemd service files (untested)
+  * Shipping new qtel icons; used them in qtel.desktop (LP: #1591112)
+  * Library packages are Multi-Arch:same
+  * Fixed more spelling errors
+  * Enabled hardening
+
+ -- Felix Lechner <felix.lechner@gmail.com>  Fri, 09 Dec 2016 16:45:49 -0800
+
+svxlink (15.11-1) unstable; urgency=medium
+
+  [ Felix Lechner ]
+  * New upstream release
+  * Changed install locations to multiarch
+  * Increased SONAMES to 1.4 for asyncaudio, asynccpp, asyncqt and asynccore
+
+  [ Colin Tuckley ]
+  * Bump Standards version to 3.9.7 (No changes required).
+
+ -- Felix Lechner <felix.lechner@gmail.com>  Wed, 06 Apr 2016 09:26:50 +0100
+
+svxlink (14.08.1-2) unstable; urgency=medium
+
+  * Support ISO C++ 2011 standard (Closes: #801265)
+
+ -- Felix Lechner <felix.lechner@gmail.com>  Mon, 02 Nov 2015 11:52:39 -0800
+
+svxlink (14.08.1-1) unstable; urgency=medium
+
+  * New upstream version
+  * Pointed Vcs-Git: and Vcs-Browser to Debian packaging, not upstream
+  * Ported package from Qt4 to Qt5
+  * Removed Build-Depends: libqt4-dev
+  * Added Build-Depends: to qtbase5-dev, qttols5-dev, qttools5-dev-tools
+  * Updated lintian-overrides
+
+ -- Felix Lechner <felix.lechner@gmail.com>  Tue, 28 Jul 2015 10:01:22 -0700
+
+svxlink (14.08-1) unstable; urgency=low
+
+  * Initial release (Closes: #733060)
+
+ -- Felix Lechner <felix.lechner@gmail.com>  Tue, 21 Oct 2014 08:52:08 -0700
