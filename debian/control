@@ -42,6 +42,27 @@ Description: Voice-over-IP server for ham radio operators
  .
  EchoLink® is a registered trademark of Synergenics, LLC.
 
+Package: svxreflector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, lsb-base (>= 3.0-6)
+Description: Conference server for SvxLink amateur radio servers
+ The SvxReflector server can interconnect multiple SvxLink nodes using
+ EchoLink®. Audio sent to the reflector is broadcast to all other
+ nodes. Only one talker is allowed at a time.
+ .
+ EchoLink® allows licensed amateur radio operators to communicate
+ over the Internet, including remote access to station equipment.
+ The server can act as a repeater controller or operate on a simplex
+ channel. Based on a modular design, the server can be configured to
+ provide voice mail and echo (talkback) service.
+ .
+ For a client program implementing the EchoLink® protocol, please
+ have a look at the 'qtel' package.
+ .
+ This package contains the SvxReflector server.
+ .
+ EchoLink® is a registered trademark of Synergenics, LLC.
+
 Package: remotetrx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, lsb-base (>= 3.0-6)
