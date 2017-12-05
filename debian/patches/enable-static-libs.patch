@@ -6,7 +6,7 @@ Last-Update: 2014-09-17
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_S
  
  # Optional parts
  option(USE_QT "Build Qt applications and libs" ON)

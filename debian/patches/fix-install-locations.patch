@@ -6,7 +6,7 @@ Last-Update: 2014-09-17
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -81,6 +81,9 @@
+@@ -81,6 +81,9 @@ endif(NOT CMAKE_BUILD_TYPE)
  # Set up standard GNU installation directories
  include(GNUInstallDirs)
  
