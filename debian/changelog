@@ -4,8 +4,9 @@ svxlink (15.11+20171204~github.bdf70af5) UNRELEASED; urgency=medium
   * Deleted CC0
   * Bumped Standards-Version: 4.1.2
   * Added .gitignore file
+  * Updated maintainer email address
 
- -- Felix Lechner <felix.lechner@lease-up.com>  Mon, 04 Dec 2017 21:54:29 -0800
+ -- Felix Lechner <felix.lechner@lease-up.com>  Mon, 04 Dec 2017 22:31:34 -0800
 
 svxlink (15.11-2.1) unstable; urgency=medium
 
