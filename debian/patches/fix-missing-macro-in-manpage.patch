@@ -1,0 +1,17 @@
+Description: Fix missing macro in man page
+Author: Felix Lechner <felix.lechner@lease-up.com>
+Forwarded: no
+Last-Update: 2017-12-05
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/doc/man/ModuleFrn.conf.5
++++ b/src/doc/man/ModuleFrn.conf.5
+@@ -69,7 +69,7 @@ Your callsign and user name used during
+ In case of PC only user, this is 'PC Only'.
+ In case of a crosslink this is 'Crosslink'.
+ In case of a gateway this is the frequancy in full Mhz and kHz separated by a
+-'.' (dot), followed by the mode 'FM', 'AM' or 'DIG', followed by a space and 
++ '.' (dot), followed by the mode 'FM', 'AM' or 'DIG', followed by a space and
+ the squelch type 'CTC', 'DSC' or 'NONE' followed by the CTC frequency or ID 
+ code.
+ 
