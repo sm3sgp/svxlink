@@ -6,7 +6,7 @@ Last-Update: 2014-09-23
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/src/doc/man/svxlink.conf.5
 +++ b/src/doc/man/svxlink.conf.5
-@@ -62,7 +62,7 @@
+@@ -62,7 +62,7 @@ Leaving this variable unset should work
  .TP
  .B LOGICS
  Specify a comma separated list of logic cores that should be created. The logic core is
@@ -15,7 +15,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  the rules for how the radio interface should be handled. The specified name of a logic
  core must have a corresponding section specified in the config file. This is where the
  behaviour of the logic core is specified.
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ card in mono mode, both left and right c
  audio.
  .TP
  .B LOCATION_INFO
@@ -24,7 +24,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  positioning data to location servers. Setting this item makes the system
  visible on the EchoLink link status page and the APRS network.
  .TP
-@@ -495,7 +495,7 @@
+@@ -539,7 +539,7 @@ To not get abrupt breaks in recordings i
  Let's say that MAX_TIME is set to 3600 seconds (one hour). If we set SOFT_TIME
  to 300 seconds (five minutes) the QSO recorder try to close the file on a
  squelch close somewhere between 55 and 60 minutes. In this way we may avoid
@@ -33,7 +33,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  .TP
  .B MAX_DIRSIZE
  Specify the maximum total size in megabytes of the files in the recording
-@@ -768,7 +768,7 @@
+@@ -814,7 +814,7 @@ it will not work as expected.
  .B SQL_TIMEOUT
  Use this configuration variable to set an upper limiti, in seconds, for how
  long the squelch is allowed to be open. If the timeout value is exceeded the
@@ -42,7 +42,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  to normal. When it opens the next time a squelch open will be signalled.
  For example, use this feature to make sure that a faulty receiver cannot block
  the system indefinitly.
-@@ -1314,7 +1314,7 @@
+@@ -1365,7 +1365,7 @@ The frequency, in Hz, that the wideband
  configuration variable should normally be left unset since SvxLink will try to
  place the wideband tuner to cover all set up Ddr frequencies. SvxLink will also
  try to avoid placing a Ddr on the center frequency of the wideband spectrum
@@ -51,7 +51,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  if you need to override the automatic placement for some reason.
  .TP
  .B XVRTR_OFFSET
-@@ -1470,7 +1470,7 @@
+@@ -1533,7 +1533,7 @@ The key will never be transmitted over t
  challenge-response procedure will be used for authentication.
  .TP
  .B CODEC
@@ -60,7 +60,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  Available codecs are: RAW (512kbps), S16 (256kbps), GSM (13.2kbps), SPEEX
  (8-25kbps), OPUS (8-64kbps). These are raw bitrate values. There will be some
  overhead added to this so the real bitrates on the wire are a little bit
-@@ -1512,7 +1512,7 @@
+@@ -1575,7 +1575,7 @@ Speex encoder setting. The quality (0-10
  .TP
  .B SPEEX_ENC_ABR
  Speex encoder setting. The average bitrate encoding will try to keep a target
@@ -69,7 +69,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  specify the target bitrate and enable ABR. It also need to have VBR enabled so
  don't force it to off.
  .TP
-@@ -1765,7 +1765,7 @@
+@@ -1834,7 +1834,7 @@ The key will never be transmitted over t
  challenge-response procedure will be used for authentication.
  .TP
  .B CODEC
@@ -78,7 +78,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  Available codecs are: RAW (512kbps), S16 (256kbps), GSM (13.2kbps), SPEEX
  (8-25kbps), OPUS (8-64kbps). These are raw bitrate values. There will be some
  overhead added to this so the real bitrates on the wire are a little bit
-@@ -1809,7 +1809,7 @@
+@@ -1878,7 +1878,7 @@ Speex encoder setting. The quality (0-10
  .TP
  .B SPEEX_ENC_ABR
  Speex encoder setting. The average bitrate encoding will try to keep a target
@@ -87,20 +87,9 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  specify the target bitrate and enable ABR. It also need to have VBR enabled so
  don't force it to off.
  .TP
---- a/src/qtel/MainWindow.cpp
-+++ b/src/qtel/MainWindow.cpp
-@@ -541,7 +541,7 @@
-   if (disp == 0)
-   {
-     //FIXME: Better error handling!
--    fprintf(stderr, "Could not initalize network listen ports\n");
-+    fprintf(stderr, "Could not initialize network listen ports\n");
-     exit(1);
-   }
-   disp->incomingConnection.connect(
 --- a/src/qtel/MsgHandler.cpp
 +++ b/src/qtel/MsgHandler.cpp
-@@ -743,7 +743,7 @@
+@@ -743,7 +743,7 @@ bool WavFileQueueItem::initialize(void)
    ptr += read16bitValue(ptr, &audio_format);
    if (audio_format != 1)
    {
@@ -111,7 +100,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
    }
 --- a/src/echolib/EchoLinkQso.cpp
 +++ b/src/echolib/EchoLinkQso.cpp
-@@ -189,7 +189,7 @@
+@@ -189,7 +189,7 @@ Qso::Qso(const IpAddress& addr, const st
    if (!Dispatcher::instance()->registerConnection(this, &Qso::handleCtrlInput,
        &Qso::handleAudioInput))
    {
@@ -122,7 +111,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
    }
 --- a/src/doc/man/remotetrx.conf.5
 +++ b/src/doc/man/remotetrx.conf.5
-@@ -138,7 +138,7 @@
+@@ -138,7 +138,7 @@ audio.
  .
  .SS Network uplink transceiver section
  .
@@ -131,20 +120,9 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  network link to the main SvxLink server. In the default configuration file there
  is a network uplink transceiver section called
  .BR NetUpLinkTrx .
---- a/src/svxlink/svxlink/MsgHandler.cpp
-+++ b/src/svxlink/svxlink/MsgHandler.cpp
-@@ -743,7 +743,7 @@
-   ptr += read16bitValue(ptr, &audio_format);
-   if (audio_format != 1)
-   {
--    cerr << "*** WARNING: SvxLink can only handle PCM formated WAV files: "
-+    cerr << "*** WARNING: SvxLink can only handle PCM formatted WAV files: "
-       	 << filename << "\n";
-     return false;
-   }
 --- a/src/doc/man/qtel.1
 +++ b/src/doc/man/qtel.1
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,7 @@ The main window consists of four areas.
  staions to view (Conferences, Links, Repeaters and private Stations). All stations in
  a class is shown to the top-right. At left-bottom is a message area that shows the messages
  from the EchoLink directory server. At right-bottom is a list of incoming connections. To
