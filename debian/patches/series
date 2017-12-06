@@ -1,5 +1,6 @@
 # quilt series file
 
+add-devcal-install-target.patch
 fix-spelling-errors.patch
 fix-missing-macro-in-manpage.patch
 add-documentation-key-to-systemd-service.patch

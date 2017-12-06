@@ -1,0 +1,16 @@
+Description: Add install target for devcal
+ devcal was previously not being installed
+Author: Felix Lechner <felix.lechner@lease-up.com>
+Forwarded: no
+Last-Update: 2017-12-06
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/svxlink/devcal/CMakeLists.txt
++++ b/src/svxlink/devcal/CMakeLists.txt
+@@ -18,3 +18,6 @@ set_target_properties(devcal PROPERTIES
+ #set_target_properties(noisegen PROPERTIES
+ #  RUNTIME_OUTPUT_DIRECTORY ${RUNTIME_OUTPUT_DIRECTORY}
+ #)
++
++# Install targets
++install(TARGETS devcal DESTINATION ${BIN_INSTALL_DIR})
