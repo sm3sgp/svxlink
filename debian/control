@@ -23,11 +23,11 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ svxlink-gpio (= ${binary:Version})
  adduser,
  lsb-base (>= 3.0-6)
 Recommends:
  remotetrx (= ${binary:Version}),
- svxlink-gpio (= ${binary:Version})
 Description: Voice-over-IP server for ham radio operators
  The SvxLink server provides access to a ham radio transceiver via
  the EchoLink® protocol. It can act as a repeater controller
@@ -67,11 +67,11 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+ svxlink-gpio (= ${binary:Version})
  adduser,
  lsb-base (>= 3.0-6)
 Recommends:
  svxlink-server (= ${binary:Version}),
- svxlink-gpio (= ${binary:Version})
 Description: Remote controller for radio transceivers
  The RemoteTrx server facilitates remote control of amateur radio
  transceivers via the EchoLink® protocol.  It is normally
