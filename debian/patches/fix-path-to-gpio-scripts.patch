@@ -7,7 +7,7 @@ Last-Update: 2017-12-05
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/src/svxlink/systemd/svxlink_gpio_setup.service.in
 +++ b/src/svxlink/systemd/svxlink_gpio_setup.service.in
-@@ -3,8 +3,8 @@ Description=SvxLink repeater control sof
+@@ -4,8 +4,8 @@ Documentation=man:svxlink(1)
  
  [Service]
  Type=oneshot

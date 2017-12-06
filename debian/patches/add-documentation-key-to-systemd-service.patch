@@ -1,5 +1,4 @@
-Description: Remove obsolete systemd targets
- syslog.target is now socket-activated and hence obsolete
+Description: Add documentation keys to systemd service files
 Author: Felix Lechner <felix.lechner@lease-up.com>
 Forwarded: no
 Last-Update: 2017-12-05
@@ -7,23 +6,30 @@ Last-Update: 2017-12-05
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/src/svxlink/systemd/remotetrx.service.in
 +++ b/src/svxlink/systemd/remotetrx.service.in
-@@ -4,7 +4,7 @@
- Description=SvxLink remote transceiver repeater control software
- Documentation=man:remotetrx(1)
- Requires=svxlink_gpio_setup.service
--After=network.target remote-fs.target syslog.target time.target
-+After=network.target remote-fs.target time.target
- After=svxlink_gpio_setup.service
+@@ -2,6 +2,7 @@
  
- [Service]
+ [Unit]
+ Description=SvxLink remote transceiver repeater control software
++Documentation=man:remotetrx(1)
+ Requires=svxlink_gpio_setup.service
+ After=network.target remote-fs.target syslog.target time.target
+ After=svxlink_gpio_setup.service
 --- a/src/svxlink/systemd/svxlink.service.in
 +++ b/src/svxlink/systemd/svxlink.service.in
-@@ -4,7 +4,7 @@
+@@ -2,6 +2,7 @@
+ 
+ [Unit]
  Description=SvxLink repeater control software
- Documentation=man:svxlink(1)
++Documentation=man:svxlink(1)
  Requires=svxlink_gpio_setup.service
--After=network.target remote-fs.target syslog.target time.target
-+After=network.target remote-fs.target time.target
+ After=network.target remote-fs.target syslog.target time.target
  After=svxlink_gpio_setup.service
+--- a/src/svxlink/systemd/svxlink_gpio_setup.service.in
++++ b/src/svxlink/systemd/svxlink_gpio_setup.service.in
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=SvxLink repeater control software GPIO setup
++Documentation=man:svxlink(1)
  
  [Service]
+ Type=oneshot

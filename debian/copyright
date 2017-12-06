@@ -31,13 +31,14 @@ License: LGPL-2.1
 
 Files: debian/*
 Copyright: 2010 Michael Vorleiter <parsival1609@yahoo.de>
-           2013-2016 Felix Lechner <felix.lechner@gmail.com>
+           2013-2016 Felix Lechner <felix.lechner@lease-up.com>
 License: GPL-2+
 
 Files:
  debian/svxreflector.service
  debian/svxreflector.default
 Copyright: 2017 Richard Neese <kb3vgw@gmail.com>
+           2017 Felix Lechner <felix.lechner@lease-up.com>
 License: GPL-2+
 
 Files: debian/icons/original/warning-10.svg

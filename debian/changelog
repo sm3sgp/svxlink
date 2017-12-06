@@ -20,8 +20,10 @@ svxlink (15.11+20171204~github.bdf70af5-1) UNRELEASED; urgency=medium
   * Moved CC0 license nearer the original icons
   * Removed obsolete syslog.target from all systemd service files
   * Provided basic init.d file for svxreflector
+  * Updated copyright info
+  * Added documentation keys for systemd service files
 
- -- Felix Lechner <felix.lechner@lease-up.com>  Tue, 05 Dec 2017 15:54:38 -0800
+ -- Felix Lechner <felix.lechner@lease-up.com>  Tue, 05 Dec 2017 16:21:33 -0800
 
 svxlink (15.11-2.1) unstable; urgency=medium
 

@@ -2,6 +2,7 @@
 
 fix-spelling-errors.patch
 fix-missing-macro-in-manpage.patch
+add-documentation-key-to-systemd-service.patch
 fix-hyphen-vs-minus-sign.patch
 fix-qtel-desktop-file.patch
 #fix-home-missing-in-environment.patch
