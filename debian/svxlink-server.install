@@ -1,5 +1,4 @@
 usr/bin/svxlink
-usr/bin/siglevdetcal
 usr/lib/*/svxlink/*
 usr/share/svxlink/*
 var/spool/svxlink/*

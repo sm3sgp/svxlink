@@ -27,7 +27,8 @@ Depends:
  adduser,
  lsb-base (>= 3.0-6)
 Recommends:
- remotetrx (= ${binary:Version})
+ remotetrx (= ${binary:Version}),
+ svxlink-calibration-tools (= ${binary:Version})
 Description: Voice-over-IP server for ham radio operators
  The SvxLink server provides access to a ham radio transceiver via
  the EchoLink® protocol. It can act as a repeater controller
@@ -71,10 +72,11 @@ Depends:
  adduser,
  lsb-base (>= 3.0-6)
 Recommends:
- svxlink-server (= ${binary:Version})
+ svxlink-server (= ${binary:Version}),
+ svxlink-calibration-tools (= ${binary:Version})
 Description: Remote controller for radio transceivers
  The RemoteTrx server facilitates remote control of amateur radio
- transceivers via the EchoLink® protocol.  It is normally
+ transceivers via the EchoLink® protocol. It is normally
  used together with the 'svxlink-server' package, which allows
  for nearly world-wide access from the Internet.
  .
@@ -97,6 +99,21 @@ Description: GPIO control scripts SvxLink amateur radio server
  By connecting into a server connected to a repeater, an operator
  can call into a local radio net via the Internet while traveling
  out of the area. EchoLink® is a registered trademark of
+ Synergenics, LLC.
+
+Package: svxlink-calibration-tools
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Description: Calibration tools for SvxLink amateur radio suite
+ SvxLink facilitates remote control of amateur radio transceivers via the
+ EchoLink® protocol. This package included the calibration tools.
+ .
+ EchoLink® allows licensed amateur radio operators to communicate
+ over the Internet, including remote access to station equipment.
+ The RemoteTrx server provides remote control of a connected radio
+ transceiver. EchoLink® is a registered trademark of
  Synergenics, LLC.
 
 Package: qtel
