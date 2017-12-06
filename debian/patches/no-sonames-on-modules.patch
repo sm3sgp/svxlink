@@ -74,3 +74,13 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  target_link_libraries(Module${MODNAME} ${LIBS})
  
  # Install targets
+--- a/src/svxlink/modules/frn/CMakeLists.txt
++++ b/src/svxlink/modules/frn/CMakeLists.txt
+@@ -30,6 +30,7 @@ add_library(Module${MODNAME} MODULE Modu
+   ${VERSION_DEPENDS}
+ )
+ set_target_properties(Module${MODNAME} PROPERTIES PREFIX "")
++set_property(TARGET Module${MODNAME} PROPERTY NO_SONAME 1)
+ target_link_libraries(Module${MODNAME} ${LIBS})
+ 
+ # Install targets
