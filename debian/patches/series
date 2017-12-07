@@ -1,11 +1,7 @@
 # quilt series file
 
-add-devcal-install-target.patch
-fix-spelling-errors.patch
-fix-missing-macro-in-manpage.patch
 fix-qtel-desktop-file.patch
 #fix-home-missing-in-environment.patch
-no-sonames-on-modules.patch
 use-default-compile-flags.patch
 remove-obsolete-systemd-targets.patch
 fix-path-to-gpio-scripts.patch

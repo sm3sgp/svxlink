@@ -1,30 +1,28 @@
-svxlink (15.11+20171207~git436-84ed3525-1) UNRELEASED; urgency=medium
+svxlink (15.11+20171207~git445-380e5333-1) UNRELEASED; urgency=medium
 
-  * Pulled new upstream master in expectation of next release
+  * Pulled new upstream master
   * Bumped Standards-Version: 4.1.2
-  * Added .gitignore file
   * Updated maintainer email address
   * Removed Build-Depends: tcl-dev, qttools5-dev-tools
   * Changed Build-Depends: libgcrypt20-dev to libgcrypt-dev
-  * Fixed some spelling errors
   * Bumped library minor version in lintian-overrides
   * Placed shared libraries in Section: libs
   * Manually create icon directories in rules (for Raspbian Jessie)
-  * Ship svxreflector in new binary package
-  * Ship GPIO auxiliaries in separate, architecture independent package
-  * Changed package descriptions in control
-  * Switched to systemd scripts provided by upstream
+  * Shipping svxreflector in new binary package
+  * Shipping calibration tools in a separate binary package
+  * Shipping GPIO auxiliaries in separate architecture independent package
+  * Set make verbosity and install directories in rules instead of patch
   * Enabled systemd integration in rules
+  * Switched to systemd scripts provided by upstream
   * Pulled systemd files for svxreflector from Richard Neese
-  * Updated copyright info for Richard Neese
-  * Moved CC0 license nearer the original icons
-  * Removed obsolete syslog.target from all systemd service files
   * Provided basic init.d file for svxreflector
+  * Removed obsolete syslog.target from systemd service files
+  * Added .gitignore file
+  * Changed package descriptions
+  * Moved CC0 license nearer the original icons
   * Updated copyright info
-  * Added documentation keys for systemd service files
-  * Split calibration tools into a separate binary package
 
- -- Felix Lechner <felix.lechner@lease-up.com>  Thu, 07 Dec 2017 12:57:30 -0800
+ -- Felix Lechner <felix.lechner@lease-up.com>  Thu, 07 Dec 2017 13:58:49 -0800
 
 svxlink (15.11-2.1) unstable; urgency=medium
 
