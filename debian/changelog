@@ -1,4 +1,4 @@
-svxlink (15.11+20171204~github.bdf70af5-1) UNRELEASED; urgency=medium
+svxlink (15.11+20171207~git436-84ed3525-1) UNRELEASED; urgency=medium
 
   * Pulled new upstream master in expectation of next release
   * Bumped Standards-Version: 4.1.2
@@ -24,7 +24,7 @@ svxlink (15.11+20171204~github.bdf70af5-1) UNRELEASED; urgency=medium
   * Added documentation keys for systemd service files
   * Split calibration tools into a separate binary package
 
- -- Felix Lechner <felix.lechner@lease-up.com>  Wed, 06 Dec 2017 04:37:56 -0800
+ -- Felix Lechner <felix.lechner@lease-up.com>  Thu, 07 Dec 2017 12:57:30 -0800
 
 svxlink (15.11-2.1) unstable; urgency=medium
 
